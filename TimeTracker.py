@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# coding=utf-8
 ''' Copyright © 2015 Revathy Narayanan 
 
 
@@ -5,26 +7,20 @@
    Please see the file LICENSE in this distribution for
    license terms. '''
 
+import os, sys
 import kivy
 kivy.require('1.0.6') # replace with your current kivy version !
 from kivy.lang import Builder
 from kivy.app import App
 from kivy.uix.label import Label
 from kivy.uix.togglebutton import ToggleButton
-from kivy.uix.scatter import Scatter
-from kivy.uix.floatlayout import FloatLayout # for resolution
+#from kivy.uix.scatter import Scatter
+#from kivy.uix.floatlayout import FloatLayout # for resolution
 from kivy.uix.textinput import TextInput
 from kivy.uix.gridlayout import GridLayout
 from datetime import datetime
+from kivy.graphics import Color, Rectangle
 
-Builder.load_string('''
-<MyApp>
-    CustomLayout:
-        AsyncImage:
-            source: 'time.gif'
-            size_hint: 1, .5
-            pos_hint: {'center_x':.5, 'center_y': .5}
-		''')
 
 
 

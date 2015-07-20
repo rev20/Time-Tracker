@@ -41,6 +41,7 @@ class MyApp(App):
 		btn2.bind(on_press=MyApp.comment_pop)
 		btn3 = ToggleButton(text='VIEW TIMESHEET', group='state', size_hint=(.3,.012),pos=(300,100))
 		btn3.bind(on_press=MyApp.timesheet_pop)
+	
 		
 		global l1
 		
@@ -66,7 +67,16 @@ class MyApp(App):
 			btn1.text='START'
 			t2 = datetime.now().replace(microsecond=0)
 			t=t2-t1
-			l1 .text ="Time Spent on task : %d" %t.seconds +" seconds"
+			l1 .text ="Time Spent on task \n %02d:%02d:%02d" % (t.seconds/3600,(t.seconds/60)%60,t.seconds%60)
+			
+	'''def cal_time(t):
+		
+	
+		hr=t.seconds/3600
+		mins=(t.seconds/60)%60
+		sec=t.seconds%60
+		return (hr,mins,sec)
+		'''
 
 	def comment_pop(instance):
 		

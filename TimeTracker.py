@@ -53,26 +53,30 @@ class MyApp(FloatLayout):
 			
 	
 		global btn1
-		btn1 = ToggleButton(text='START', group='state', size_hint=(.2,.012),pos=(200,350))
+		btn1 = ToggleButton(text=' START ', bold=True,group='state', size_hint=(.25,.022),pos=(190,380),border=(40,0,40,0))
 		btn1.bind(on_press=MyApp.start_timer)
 		global btn2
-		btn2 = ToggleButton(text='LOG TASK', group='state', size_hint=(.3,.012),pos=(20,50),disabled=True)
+		btn2 = ToggleButton(text='LOG TASK', group='state', size_hint=(.25,.012),pos=(20,50),disabled=True,border=(20,0,20,0))
 		btn2.bind(on_press=MyApp.comment_pop)
-		btn3 = Button(text='VIEW TIMESHEET',size_hint=(.3,.012),pos=(330,50))
+		btn3 = Button(text='VIEW TIMESHEET',size_hint=(.29,.012),pos=(335,50),border=(20,0,20,0))
 		btn3.bind(on_press=MyApp.timesheet_pop)
-		btn4 = Button(text='MAIL TIMESHEET', group='state', size_hint=(.3,.012),pos=(330,550))
+		btn4 = Button(text='MAIL TIMESHEET', group='state', size_hint=(.29,.012),pos=(335,550),border=(20,0,20,0))
 		btn4.bind(on_press=MyApp.mail_pop)
+		
+		btn5 = Button(text='READ ME', group='state', size_hint=(.25,.012),pos=(20,550),border=(20,0,20,0))
+		btn5.bind(on_press=MyApp.readme_pop)
 	
 		
 		global l1
 		
-		l1 = Label (text="\n Begin to track time\n")
+		l1 = Label (bold=True)
 		
 	
 		self.add_widget(btn1)
 		self.add_widget(btn2)
 		self.add_widget(btn3)
 		self.add_widget(btn4)
+		self.add_widget(btn5)
 
 		self.add_widget(l1)
 		
@@ -86,7 +90,7 @@ class MyApp(FloatLayout):
 			
 			global t1
 			t1 = datetime.now().replace(microsecond=0)
-			l1 .text ="Timer started...\nStart Time: "+ datetime.strftime(t1,'%H:%M:%S')
+			l1 .text ="           ...Timer ON ...\n     START TIME: "+ datetime.strftime(t1,'%H:%M:%S')
 			
 		else:
 			btn1.text='START'
@@ -95,44 +99,42 @@ class MyApp(FloatLayout):
 			t=t2-t1
 			
 			global time_spent
-			l1 .text ="Time Spent on task \n %02d:%02d:%02d" % (t.seconds/3600,(t.seconds/60)%60,t.seconds%60)
+			l1 .text ="       ...TIME SPENT... \n             %02d:%02d:%02d" % (t.seconds/3600,(t.seconds/60)%60,t.seconds%60)
 			time_spent="%02d:%02d:%02d" % (t.seconds/3600,(t.seconds/60)%60,t.seconds%60)
 			
-	'''def cal_time(t):
-		
 	
-		hr=t.seconds/3600
-		mins=(t.seconds/60)%60
-		sec=t.seconds%60
-		return (hr,mins,sec)
-		'''
 
 	def comment_pop(instance):
+	
 		max_chars = NumericProperty(20)
 		f=FloatLayout()
 		global popup1
 		popup1 = Popup(title='Task Desciption',
 		content=f,
 		size_hint=(1.0, 0.6), size=(400, 400))
-		g=GridLayout(cols=2,row_force_default=True, row_default_height=40)
-		global msg
-		msg=Label(text="Please enter the task and comment to save the task \n")
+		g=GridLayout(cols=2,row_force_default=True, row_default_height=40,padding=(1,0,1,0))
+		
 		g.add_widget(Label(text="TASK",pos=(400,600)))
 		global task
 		task=TextInput(size_hint=(1,0.75),write_tab=False,text_size=(2,None))
+		g.add_widget(task)
 		
 		
 		g.add_widget(Label(text="COMMENTS",pos=(400,400)))
 		global comment
 		comment=TextInput(size_hint=(1,0.75),write_tab=False)
-		g.add_widget(msg)
-		g.add_widget(task)
 		g.add_widget(comment)
+		
+		
+		
+		global msg
+		msg=Label(text="Please enter the task and comment to save the task \n",pos=(popup1.width-350,popup1.height-200))
 		
 		
 		btn1=Button(text='SAVE',size_hint=(0.2,0.1),pos=(popup1.width-350,popup1.height-250))
 		btn1.bind(on_press=partial(MyApp.update_timesheet))
 		btn2=Button(text='CANCEL',size_hint=(0.2,0.1),pos=(popup1.width-50,popup1.height-250))
+		f.add_widget(msg)
 		f.add_widget(btn1)
 		f.add_widget(btn2)
 		f.add_widget(g)
@@ -149,7 +151,7 @@ class MyApp(FloatLayout):
 			global tslabel
 			tslabel=Label(size_hint_y=None,line_height=1.5,valign="top", text="|_ID_|______DATE______|___TIME_SPENT____|_____TASK_________|")
 			tslabel.bind(texture_size=tslabel.setter('size'))
-			btn1=Button(text='CLOSE',size_hint=(.4,.022))
+			btn1=Button(text='CLOSE',size_hint=(1,.06))
 			s.add_widget(tslabel)
 			b.add_widget(s)
 			b.add_widget(btn1)
@@ -210,15 +212,16 @@ class MyApp(FloatLayout):
 		global popup2
 		popup2 = Popup(title='Mail Timesheet',content=f,
 		size_hint=(1.0, 0.6), size=(400, 400))
-		g=GridLayout(cols=2,row_force_default=True, row_default_height=40)
+		g=GridLayout(cols=1,row_force_default=True, row_default_height=40,pos_hint={'center_x':.5})
 		global msg
-		msg=Label(text="Enter a vail mail id :")
-		g.add_widget(Label(text="MAIL ID ",pos=(400,600)))
+		msg=Label(text="ENTER AN EMAIL ID")
+		
 		global mail_id
-		mail_id=TextInput(size_hint=(1,0.75),write_tab=False)
+		mail_id=TextInput(write_tab=False)
 		g.add_widget(msg)
 		g.add_widget(mail_id)
-		btn1=Button(text='MAIL',size_hint=(0.2,0.1),pos=(popup2.width-350,popup2.height-250))
+		global btn1
+		btn1=Button(text='MAIL',size_hint=(0.2,0.1),pos=(popup2.width-350,popup2.height-250) )
 		btn1.bind(on_press=(MyApp.mail_timesheet))
 		btn2=Button(text='CANCEL',size_hint=(0.2,0.1),pos=(popup2.width-50,popup2.height-250))
 		f.add_widget(btn1)
@@ -228,14 +231,22 @@ class MyApp(FloatLayout):
 		btn2.bind(on_press=popup2.dismiss)
 	
 	def mail_timesheet(self):
-	    print"entering mail timesheet"
+	    msg.text=" ENTER AN EMAIL ID "
+	    
 	
 	    if (mail_id.text=="" or (not re.match("[^@]+@[^@]+\.[^@]+", mail_id.text))):
-				msg.text="Please enter a Valid Email Id "
+				msg.text="PLEASE ENTER A VALID EMAIL ID "
+				
+				
 				mail_id.focus=True 
+				
+				
+				return
+	    
+	    
+		   
 			
-			
-			
+	    
 	    con=lite.connect('/Users/revathy/Applications/TimeTracker.db')
 	    with con:
 				
@@ -247,11 +258,11 @@ class MyApp(FloatLayout):
 			
 	    with open('timetracker.csv', 'wb') as fp:
 			 timesheet = csv.writer(fp, delimiter=',')
-			 timesheet.writerow(["|_ID_|______DATE______|___TIME_SPENT____|_____TASK_________|"])
+			 timesheet.writerow(["ID","  DATE   ","    TIME_SPENT ", "  TASK  "])
 			 timesheet.writerows(ts_data)
 			  #timesheet.close()'''
 	   
-	    toaddrs='revathy@pdx.edu'
+	    toaddrs=mail_id.text
 	    emsg = MIMEMultipart()
 	    emsg["To"] = toaddrs
 	    emsg["From"] = 'timetrackerpro@gmail.com'
@@ -273,6 +284,27 @@ class MyApp(FloatLayout):
 	    server.login(username,password)
 	    server.sendmail('timetrackerpro@gmail.com',toaddrs,emsg.as_string())
 	    server.quit()
+	    msg.text='MAIL SENT'
+	    
+	def readme_pop(self):
+			
+			popup = Popup(title='README')
+			b=BoxLayout(orientation='vertical')
+			s = ScrollView()
+			global tslabel
+			tslabel=Label(size_hint_y=None,line_height=1.5,valign="top", text="UNder CONstruction")
+			tslabel.bind(texture_size=tslabel.setter('size'))
+			btn1=Button(text='CLOSE',size_hint=(1,.06))
+			s.add_widget(tslabel)
+			b.add_widget(s)
+			b.add_widget(btn1)
+			popup.content=b
+			
+			popup.open()
+			btn1.bind(on_press=popup.dismiss)
+			
+		
+			
 		
 
 		

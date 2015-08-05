@@ -38,8 +38,9 @@ from kivy.properties import NumericProperty
 import csv
 
 
+
 from email.mime.multipart import MIMEMultipart
-from email.mime.image import MIMEImage
+from email.mime.text import MIMEText
 
 class MyApp(FloatLayout):
 	def __init__(self, **kwargs):
@@ -227,9 +228,11 @@ class MyApp(FloatLayout):
 		btn2.bind(on_press=popup2.dismiss)
 	
 	def mail_timesheet(self):
-	#	if (mail_id.text=="" or (not re.match("[^@]+@[^@]+\.[^@]+", mail_id.text))):
-	#			msg.text="Please enter a Valid Email Id "
-	#			mail_id.focus=True 
+	    print"entering mail timesheet"
+	
+	    if (mail_id.text=="" or (not re.match("[^@]+@[^@]+\.[^@]+", mail_id.text))):
+				msg.text="Please enter a Valid Email Id "
+				mail_id.focus=True 
 			
 			
 			
@@ -247,7 +250,29 @@ class MyApp(FloatLayout):
 			 timesheet.writerow(["|_ID_|______DATE______|___TIME_SPENT____|_____TASK_________|"])
 			 timesheet.writerows(ts_data)
 			  #timesheet.close()'''
+	   
+	    toaddrs='revathy@pdx.edu'
+	    emsg = MIMEMultipart()
+	    emsg["To"] = toaddrs
+	    emsg["From"] = 'timetrackerpro@gmail.com'
+	    emsg["Subject"] = 'Time Tracker - Timesheet Update'
+	
+	    f =file('timetracker.csv')
+	    attachment= MIMEText(f.read())
+	    attachment.add_header('Content-Disposition', 'attachment', filename='timetracker.csv')
+	    emsg.attach(attachment)
+	    
+	    # Credentials (if needed)
+	    username = 'timetrackerpro@gmail.com'
+	    password = 'tracktimepy'
 
+	    # The actual mail send
+	    server = smtplib.SMTP('smtp.gmail.com:587'	)
+	    server.ehlo()
+	    server.starttls()
+	    server.login(username,password)
+	    server.sendmail('timetrackerpro@gmail.com',toaddrs,emsg.as_string())
+	    server.quit()
 		
 
 		

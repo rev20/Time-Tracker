@@ -119,6 +119,7 @@ class MyApp(FloatLayout):
 		    rows = cur.fetchall()
 		    task_list=['OTHER']
 		    print rows
+		    print len(rows)
 
 		    for row in rows:
 				task_list.append(row[0])
@@ -140,9 +141,20 @@ class MyApp(FloatLayout):
 		global task
 		task=TextInput(size_hint=(1,0.75),write_tab=False,text_size=(2,None))
 
-		spinner = Spinner(text='OTHER',values=task_list,size_hint=(None, None),size=(100, 44),pos_hint={'center_x': .5, 'center_y': .5})
+		dropdown = DropDown()
+		for index in range(len(rows)+1):
+		    btn = Button(text=task_list[index], size_hint_y=None, height=44)
+		    btn.bind(on_release=lambda btn: dropdown.select(btn.text))
+		    dropdown.add_widget(btn)
+		global mainbutton
+		mainbutton = Button(text='TASK', size_hint=(None, None),size=(100, 44),pos_hint={'center_x': .5, 'center_y': .5})
+		mainbutton.bind(on_release=dropdown.open)
+		dropdown.bind(on_select=MyApp.select_task)
+		g.add_widget(mainbutton)
+
+		'''spinner = Spinner(text='OTHER',values=task_list,size_hint=(None, None),size=(100, 44),pos_hint={'center_x': .5, 'center_y': .5})
 		spinner.bind(on_release=MyApp.select_task)
-		g.add_widget(spinner)
+		g.add_widget(spinner)'''
 
 		g.add_widget(Label(text="ADD TASK",pos=(400,600)))
 
@@ -170,12 +182,11 @@ class MyApp(FloatLayout):
 		popup1.open()
 		btn2.bind(on_press=popup1.dismiss)
 
-	def select_task(self,*args):
-		   print"inside select_task\n"
-		   #on_select=self.text
-		   task.text=self.text
-		   #return task.text
 
+
+	def select_task(self,*args):
+		   setattr(mainbutton, 'text', args[0])
+		   setattr(task, 'text',  args[0])
 
 
 	def timesheet_pop(self):

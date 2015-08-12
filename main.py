@@ -123,7 +123,7 @@ class MyApp(FloatLayout):
 	def comment_pop(instance):
 		""" Creates a Popup to Log Task into timesheet  """
 
-		con=lite.connect('/Users/revathy/Applications/TimeTracker.db')
+		con=lite.connect('TimeTracker.db')
 		with con:
 		    cur=con.cursor()
 		    cur.execute("SELECT DISTINCT TASK FROM Timesheet ORDER BY TASK ")
@@ -203,7 +203,7 @@ class MyApp(FloatLayout):
 		popup.open()
 		btn1.bind(on_press=popup.dismiss)
 
-		con=lite.connect('/Users/revathy/Applications/TimeTracker.db')
+		con=lite.connect('TimeTracker.db')
 		with con:
 				cur=con.cursor()
 				cur.execute("SELECT ID, TASK_DATE, TIME, TASK FROM Timesheet")
@@ -227,7 +227,7 @@ class MyApp(FloatLayout):
 
 				return
 		date_now=datetime.today().strftime("%m/%d/%Y")
-		con=lite.connect('/Users/revathy/Applications/TimeTracker.db')
+		con=lite.connect('TimeTracker.db')
 		with con:
 			cur=con.cursor()
 			sqlinsert="INSERT INTO Timesheet "
@@ -275,7 +275,7 @@ class MyApp(FloatLayout):
 			mail_id.focus=True
 			return
 
-	    con=lite.connect('/Users/revathy/Applications/TimeTracker.db')
+	    con=lite.connect('TimeTracker.db')
 	    with con:
 			cur=con.cursor()
 			ts_data=cur.execute("SELECT ID, TASK_DATE, TIME, TASK FROM Timesheet")

@@ -51,6 +51,8 @@ import sqlite3 as lite
 import sys
 import re
 import smtplib
+import os
+import sys
 
 
 class MyApp(FloatLayout):
@@ -331,6 +333,16 @@ class TimeTracker(App):
 	""" The Root Canvas """
 	def build(self):
 		title="Time Tracker" 	#Text on the title bar
+		if not os.path.exists("TimeTracker.db"):
+		    con=lite.connect('TimeTracker.db')
+		    with con:
+		        cur=con.cursor()
+		        cur.execute("CREATE TABLE Timesheet(Id INTEGER PRIMARY KEY, Task_Date TEXT, Task TEXT NOT NULL , Comments TEXT , Time TEXT)")
+
+
+		    if con:
+		        con.close()
+
 		return MyApp()
 
 

@@ -54,9 +54,9 @@ https://github.com/rev20/Time-Tracker/
 ## BUILD INSTRUCTIONS
 
 Make sure you have installed <br />
-**Python 2.7 or higher **: https://www.python.org/downloads/ <br />
-**Sqlite3              **: https://www.sqlite.org/download.html <br />
-**Kivy 1.9.0 or higher **: http://kivy.org/#download <br />
+**Python 2.7 or higher**: https://www.python.org/downloads/ <br />
+**Sqlite3             **: https://www.sqlite.org/download.html <br />
+**Kivy 1.9.0 or higher**: http://kivy.org/#download <br />
 
 ```
 git clone https://github.com/rev20/Time-Tracker.git

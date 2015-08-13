@@ -52,7 +52,7 @@ https://github.com/rev20/Time-Tracker/
 ##SCREENSHOTS
 
 
-![Home screen](https://raw.github.com/rev20/Time-Tracker/blob/master/SCREENSHOTS/homescreen.png)
+![Home screen](SCREENSHOTS/homescreen.png)
 
 
 

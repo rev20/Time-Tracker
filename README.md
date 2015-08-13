@@ -86,7 +86,7 @@ Please log in issues/bugs in https://github.com/rev20/Time-Tracker/issues
 
 ###CONTACT INFO
 
-**Author**   : Revathy Narayanan
+**Author**   : Revathy Narayanan <br />
 **Email ID** : revathy@pdx.edu
 
 

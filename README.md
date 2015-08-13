@@ -46,12 +46,13 @@ https://github.com/rev20/Time-Tracker/blob/master/LICENSE
 
 ## PROJECT REPOSITORY
 
-Following is the link for the repository: 
+Following is the link for the repository: <br />
 https://github.com/rev20/Time-Tracker/
 
 ##SCREENSHOTS
 
-![Home screen ](/Users/revathy/homescreen.png "Home")
+
+![Home screen](https://raw.github.com/rev20/Time-Tracker/blob/master/SCREENSHOTS/homescreen.png)
 
 
 
@@ -59,9 +60,9 @@ https://github.com/rev20/Time-Tracker/
 
 Make sure you have installed <br />
 
-Python 2.7 or higher : https://www.python.org/downloads/ <br />
-Sqlite3              : https://www.sqlite.org/download.html <br /> 
-Kivy 1.9.0 or higher : http://kivy.org/#download <br />
+*[Python 2.7 or higher :] (https://www.python.org/downloads/) <br />
+*[Sqlite3              :] (https://www.sqlite.org/download.html) <br /> 
+*[Kivy 1.9.0 or higher :] (http://kivy.org/#download) <br />
 
 ```
 git clone https://github.com/rev20/Time-Tracker.git

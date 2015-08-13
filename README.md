@@ -4,7 +4,7 @@ Copyright (C) 2015 Revathy Narayanan
 
 The TimeTracker is a Python application that will keep track of time spent in day-to-day activities.
 The Application will have features 
-*Start/Stop watch 
+* Start/Stop watch 
 *Log Task
 *Add Comments
 *Generate & View Timesheet

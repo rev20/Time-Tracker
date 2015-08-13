@@ -49,17 +49,14 @@ https://github.com/rev20/Time-Tracker/blob/master/LICENSE
 Following is the link for the repository: 
 https://github.com/rev20/Time-Tracker/
 
-## SCREENSHOTS
-
-![Alt text](/Users/revathy/Desktop/homescreen.png?raw=true "HOMESCREEN")
 
 
 ## BUILD INSTRUCTIONS
 
-Make you have installed <br />
-Python 2.7 or higher : https://www.python.org/downloads/ <br />
-Sqlite3 : https://www.sqlite.org/download.html <br />
-Kivy 1.9.0 or higher : http://kivy.org/#download <br />
+Make sure you have installed <br />
+**Python 2.7 or higher **: https://www.python.org/downloads/ <br />
+**Sqlite3              **: https://www.sqlite.org/download.html <br />
+**Kivy 1.9.0 or higher **: http://kivy.org/#download <br />
 
 ```
 git clone https://github.com/rev20/Time-Tracker.git
@@ -69,9 +66,11 @@ kivy main.py
 ```
 <br />
 To run multiple instances of the app for simultaneously tracking multiple tasks, <br />
-run it as a background process using the following code : <br />
+run it as multiple background processes using the following code : <br />
 
 ```
+
+kivy main.py &
 
 ```
 

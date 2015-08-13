@@ -5,10 +5,10 @@ Copyright (C) 2015 Revathy Narayanan
 The TimeTracker is a Python application that will keep track of time spent in day-to-day activities.
 The Application will have features 
 * Start/Stop watch 
-*Log Task
-*Add Comments
-*Generate & View Timesheet
-*Mail Timesheet
+* Log Task
+* Add Comments
+* Generate & View Timesheet
+* Mail Timesheet
 
 Time Tracker is licensed under the MIT license. You may use, copy, modify, merge, publish, and distribute this project as you see fit. See the MIT license for more details.
 

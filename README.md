@@ -49,13 +49,18 @@ https://github.com/rev20/Time-Tracker/blob/master/LICENSE
 Following is the link for the repository: 
 https://github.com/rev20/Time-Tracker/
 
+##SCREENSHOTS
+
+![Home screen ](/Users/revathy/homescreen.png "Home")
+
 
 
 ## BUILD INSTRUCTIONS
 
 Make sure you have installed <br />
-**Python 2.7 or higher**: https://www.python.org/downloads/ <br />
-**Sqlite3             **: https://www.sqlite.org/download.html <br />
+
+**Python 2.7 or higher** : https://www.python.org/downloads/ <br />
+**Sqlite3             ** : https://www.sqlite.org/download.html <br /> 
 **Kivy 1.9.0 or higher**: http://kivy.org/#download <br />
 
 ```

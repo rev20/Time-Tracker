@@ -51,28 +51,45 @@ https://github.com/rev20/Time-Tracker/
 
 ## SCREENSHOTS
 
+![Alt text](/Users/revathy/Desktop/homescreen.png?raw=true "HOMESCREEN")
+
 
 ## BUILD INSTRUCTIONS
+
+Make you have installed <br />
+Python 2.7 or higher : https://www.python.org/downloads/ <br />
+Sqlite3 : https://www.sqlite.org/download.html <br />
+Kivy 1.9.0 or higher : http://kivy.org/#download <br />
+
 ```
 git clone https://github.com/rev20/Time-Tracker.git
 cd Time-Tracker/CODE
 kivy main.py
 
 ```
+<br />
+To run multiple instances of the app for simultaneously tracking multiple tasks, <br />
+run it as a background process using the following code : <br />
+
+```
+
+```
 
 
 ## USER MANUAL
 
+https://github.com/rev20/Time-Tracker/blob/master/DOCS/User%20Manual.pdf
+
 ## REFERENCES
-kivy.org
-https://www.python.org
-https://docs.python.org/2/library/sqlite3.html
+kivy.org <br />
+https://www.python.org <br />
+https://docs.python.org/2/library/sqlite3.html <br />
 
 ## PACKAGING GUIDE
-http://kivy.org/docs/installation/installation-macosx.html
-http://kivy.org/docs/guide/packaging-android.html
-http://kivy.org/docs/guide/packaging-ios.html
-http://kivy.org/docs/guide/packaging-windows.html
+http://kivy.org/docs/installation/installation-macosx.html <br />
+http://kivy.org/docs/guide/packaging-android.html <br />
+http://kivy.org/docs/guide/packaging-ios.html <br />
+http://kivy.org/docs/guide/packaging-windows.html <br />
 
 ## FUTURE ENHANCEMENTS
 * Ability to time multiple tasks simultaneously(Can be done with current version through command-line)
@@ -81,7 +98,7 @@ http://kivy.org/docs/guide/packaging-windows.html
 
 
 ##BUG/ISSUE TRACKER
-Please log in issues/bugs in https://github.com/rev20/Time-Tracker/issues
+Please log in issues/bugs in:  https://github.com/rev20/Time-Tracker/issues
 
 
 ###CONTACT INFO

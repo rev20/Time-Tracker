@@ -53,9 +53,12 @@ https://github.com/rev20/Time-Tracker/
 
 
 ## BUILD INSTRUCTIONS
-''' git clone https://github.com/rev20/Time-Tracker.git
+'''
+git clone https://github.com/rev20/Time-Tracker.git
 cd Time-Tracker/CODE
-kivy main.py '''
+kivy main.py
+
+'''
 
 
 ## USER MANUAL

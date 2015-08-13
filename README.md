@@ -1,4 +1,4 @@
-# TIME TRACKER(an <h2> tag)
+# TIME TRACKER
 
 Copyright (C) 2015 Revathy Narayanan
 

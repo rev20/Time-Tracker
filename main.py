@@ -318,7 +318,18 @@ class MyApp(FloatLayout):
 		s = ScrollView()
 		global tslabel
 		tslabel=Label(size_hint_y=None,line_height=1.5,valign="top",
-					  text="UNder CONstruction")
+					  text= "Copyright (C) 2015 Revathy Narayanan\n" +
+					  "The TimeTracker is a Python application \n that will keep"+
+					  " track of time spent\n in day-to-day activities.\n\n"+
+"The Application will have features \n"+
+"* Start/Stop watch \n * Log Task\n * Add Comments\n"+
+"* Generate & View Timesheet\n * Mail Timesheet\n\n "+
+"The code is licensed under MIT License(MIT).\n "+
+"Please see the file license in this distribution\n for license terms in the link below :\n"+
+"https://github.com/rev20/Time-Tracker/blob/master/LICENSE \n\n"+
+"Following is the link for the repository: \n"+
+"https://github.com/rev20/Time-Tracker/")
+
 		tslabel.bind(texture_size=tslabel.setter('size'))
 		btn1=Button(text='CLOSE',size_hint=(1,.06))
 		s.add_widget(tslabel)

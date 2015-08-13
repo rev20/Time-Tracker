@@ -14,9 +14,9 @@ The Application will have features
 
 The Time Tracker application was developed using Python,Kivy and SQLite. Kivy is a UI Library for Python that helps create custom and highly interactive applications. The following versions of software will be required to work on this application :
 
-* Python 2.7
-* SQLite3
-* Kivy 1.9.0
+* [Python 2.7](https://www.python.org/downloads/)
+* [SQLite3](https://www.sqlite.org/download.html)
+* [Kivy 1.9.0](http://kivy.org/#download)
 
 ## LICENSE
 
@@ -39,7 +39,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-If not please check [MIT LICENSE](http://opensource.org/licenses/MIT)
+If not please check [MIT LICENSE(MIT)](http://opensource.org/licenses/MIT)
 
 Please see the file license in this distribution for license terms in the link below :
 https://github.com/rev20/Time-Tracker/blob/master/LICENSE
@@ -59,9 +59,9 @@ https://github.com/rev20/Time-Tracker/
 
 Make sure you have installed <br />
 
-**Python 2.7 or higher** : https://www.python.org/downloads/ <br />
-**Sqlite3             ** : https://www.sqlite.org/download.html <br /> 
-**Kivy 1.9.0 or higher**: http://kivy.org/#download <br />
+Python 2.7 or higher : https://www.python.org/downloads/ <br />
+Sqlite3              : https://www.sqlite.org/download.html <br /> 
+Kivy 1.9.0 or higher : http://kivy.org/#download <br />
 
 ```
 git clone https://github.com/rev20/Time-Tracker.git
@@ -85,7 +85,7 @@ kivy main.py &
 https://github.com/rev20/Time-Tracker/blob/master/DOCS/User%20Manual.pdf
 
 ## REFERENCES
-kivy.org <br />
+http://kivy.org <br />
 https://www.python.org <br />
 https://docs.python.org/2/library/sqlite3.html <br />
 

@@ -1,10 +1,11 @@
-# TimeTracker
+# TIME TRACKER(an <h2> tag)
 
 Copyright (C) 2015 Revathy Narayanan
 
 The TimeTracker is a Python application that will keep track of time spent in day-to-day activities.
 The Application will have features like stop watch to track time, add comments,log task, generate and mail Timesheet.
 
+Time Tracker is licensed under the MIT license. You may use, copy, modify, merge, publish, and distribute this project as you see fit. See the MIT license for more details.
 
 The Application was implemented using Python2.7 using Kivy1.9.0 UI Library and supported in the backend by SQLite3 database.
 
@@ -28,31 +29,6 @@ Contact info : revathy@pdx.edu
 
 
 
-NAME:
-Revathy Narayanan
-
-PROJECT NAME:
-Time Tracker
-
-CONTACT INFORMATION:
-Revathy Narayanan revathy@pdx.edu
-
-PROJECT DESCRIPTION:
-The TimeTracker is a Python application that will keep track of time spent in day-to-day activities.
-The Application will have features like stop watch to track time, add comments,log task, generate and mail Timesheet.
-
-UI: Kivy 1.9.0
-
-Backend Database: SQLite3
-
-License Information
-Please follow the below link for the license information.
-
-https://github.com/rev20/Time-Tracker/blob/master/LICENSE
-
-Source Code
-https://github.com/rev20/Time-Tracker/
-
 Developer Documents
 
 User Manual
@@ -69,8 +45,7 @@ Prerequisites
 Future Enhancements
 
 
-Reference
-Please follow the link for references:
+
 
 
 
